@@ -5,6 +5,7 @@ import GridOfCards from "../GridOfCards/GridOfCards";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Section from "../Section/Section";
+import FAQs from "../FAQs/FAQs";
 
 function HomePage() {
   let [topAlbums, setTopAlbums] = useState([]);
@@ -31,6 +32,7 @@ function HomePage() {
       <Hero />
       <Section data={topAlbums} title="Top Albums" />
       <Section data={newAlbums} title="New Albums" />
+      <FAQs />
     </>
   );
 }
