@@ -1,15 +1,16 @@
 // import './App.css';
 import Navbar from "../Navbar/Navbar";
 import Hero from "../Hero/Hero";
-import GridOfCards from "../GridOfCards/GridOfCards";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Section from "../Section/Section";
+import FilterSongs from "../FilterSongs/FilterSongs";
 import FAQs from "../FAQs/FAQs";
 
 function HomePage() {
   let [topAlbums, setTopAlbums] = useState([]);
   let [newAlbums, setNewAlbums] = useState([]);
+  let [songs, setSongs] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,6 +23,12 @@ function HomePage() {
         "https://qtify-backend-labs.crio.do/albums/new"
       );
       setNewAlbums(albums2.data);
+
+      const songsJson = await axios.get(
+        "https://qtify-backend-labs.crio.do/songs"
+      );
+      setSongs(songsJson.data);
+      console.log("songs data: ",songsJson.data);
     };
     fetchData();
   }, []);
@@ -32,6 +39,7 @@ function HomePage() {
       <Hero />
       <Section data={topAlbums} title="Top Albums" />
       <Section data={newAlbums} title="New Albums" />
+      <FilterSongs songs={songs}/>
       <FAQs />
     </>
   );

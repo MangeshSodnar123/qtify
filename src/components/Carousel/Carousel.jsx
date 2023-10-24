@@ -26,7 +26,7 @@ function Controls({ data }) {
     );
   }
 
-const Carousel = ({ data, renderComponent }) => {
+const Carousel = ({ data}) => {
 
   return (
     <div className={styles.wrapper}>
