@@ -9,6 +9,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   column-gap: 30px;
+  margin: 20px 0px;
 }
 .left_heading {
   font-size: 20px;
@@ -23,4 +24,5 @@
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
+  cursor: pointer;
 }

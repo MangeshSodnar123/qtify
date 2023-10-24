@@ -4,11 +4,7 @@ import styles from "./GridOfCards.module.css";
 
 const GridOfCards = ({ albums }) => {
   return (
-    <div style={{ margin: "25px" }}>
-      <div className={styles.title_container}>
-        <span className={styles.left_heading}>Top Albums</span>
-        <span className={styles.right_heading}>Collapse</span>
-      </div>
+    <div>
       <div className={styles.container}>
         {albums.map((album) => {
           return (
