@@ -66,7 +66,7 @@ export default function FilterSongs({ songs }) {
   return (
     <Box sx={{ width: "100%" }}>
       <Typography className={styles.heading}>Songs</Typography>
-      <Box sx={{ borderBottom: 1, borderColor: "divider", margin: "32px" }}>
+      <Box sx={{ borderBottom: 1, borderColor: "divider", margin: "5px" }}>
         <Tabs
           value={value}
           onChange={handleChange}
