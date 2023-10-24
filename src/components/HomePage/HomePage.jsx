@@ -8,14 +8,19 @@ import Section from "../Section/Section";
 
 function HomePage() {
   let [topAlbums, setTopAlbums] = useState([]);
+  let [newAlbums, setNewAlbums] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const albums = await axios.get(
+      const albums1 = await axios.get(
         "https://qtify-backend-labs.crio.do/albums/top"
       );
-      setTopAlbums(albums.data);
-      console.log(topAlbums);
+      setTopAlbums(albums1.data);
+
+      const albums2 = await axios.get(
+        "https://qtify-backend-labs.crio.do/albums/new"
+      );
+      setNewAlbums(albums2.data);
     };
     fetchData();
   }, []);
@@ -24,7 +29,8 @@ function HomePage() {
     <>
       <Navbar />
       <Hero />
-      <Section data={topAlbums} title="Top Albums"/>
+      <Section data={topAlbums} title="Top Albums" />
+      <Section data={newAlbums} title="New Albums" />
     </>
   );
 }
