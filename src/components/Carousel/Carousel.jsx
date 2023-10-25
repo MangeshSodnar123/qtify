@@ -41,13 +41,18 @@ const Carousel = ({ data,isForSongs=false}) => {
         <Controls data={data} />
         {data.map((item, index) => (
           <SwiperSlide key={index}>
-            <Card
+          {isForSongs? (<Card
               image_url={item.image}
-              followers={item.follows}
               likes={isForSongs && item.likes}
               title={item.title}
               forSongs={isForSongs}
-            />
+            />):(<Card
+              image_url={item.image}
+              followers={item.follows}
+              title={item.title}
+              noOfSongs={item.songs.length}
+            />)}
+            
           </SwiperSlide>
         ))}
       </Swiper>
