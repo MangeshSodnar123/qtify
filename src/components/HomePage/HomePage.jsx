@@ -28,7 +28,8 @@ function HomePage() {
         "https://qtify-backend-labs.crio.do/songs"
       );
       setSongs(songsJson.data);
-      console.log("songs data: ",songsJson.data);
+      // console.log("songs data: ",songsJson.data);
+      console.log("albums1: ",albums1);
     };
     fetchData();
   }, []);

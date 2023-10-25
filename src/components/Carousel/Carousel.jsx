@@ -26,7 +26,7 @@ function Controls({ data }) {
     );
   }
 
-const Carousel = ({ data}) => {
+const Carousel = ({ data,isForSongs=false}) => {
 
   return (
     <div className={styles.wrapper}>
@@ -44,7 +44,9 @@ const Carousel = ({ data}) => {
             <Card
               image_url={item.image}
               followers={item.follows}
+              likes={isForSongs && item.likes}
               title={item.title}
+              forSongs={isForSongs}
             />
           </SwiperSlide>
         ))}

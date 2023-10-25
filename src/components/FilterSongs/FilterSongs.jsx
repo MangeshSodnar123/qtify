@@ -100,19 +100,19 @@ export default function FilterSongs({ songs }) {
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
-        <Carousel data={songs} />
+        <Carousel data={songs} isForSongs={true}/>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        <Carousel data={rockSongs} />
+        <Carousel data={rockSongs} isForSongs={true}/>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
-        <Carousel data={popSongs} />
+        <Carousel data={popSongs} isForSongs={true}/>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={3}>
-        <Carousel data={jazzSongs} />
+        <Carousel data={jazzSongs} isForSongs={true}/>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={4}>
-        <Carousel data={bluesSongs} />
+        <Carousel data={bluesSongs} isForSongs={true}/>
       </CustomTabPanel>
     </Box>
   );
